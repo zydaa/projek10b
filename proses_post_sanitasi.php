@@ -4,6 +4,7 @@ function sanitize($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
+$nim        = sanitize($_POST['nim']);
 $nama       = sanitize($_POST['nama']);
 $alamat     = sanitize($_POST['alamat']);
 $no_hp      = sanitize($_POST['no_hp']);
@@ -37,7 +38,11 @@ if (!empty($_POST['hobi'])) {
 
         <table class="table table-bordered table-striped">
             <tr>
-                <th width="200">Nama</th>
+                <th width="200">NIM</th>
+                <td><?= $nim ?></td>
+            </tr>
+            <tr>
+                <th>Nama</th>
                 <td><?= $nama ?></td>
             </tr>
             <tr>
@@ -67,7 +72,7 @@ if (!empty($_POST['hobi'])) {
         </table>
 
         <div class="text-center mt-3">
-            <a href="f_post.php" class="btn btn-primary">Kembali ke Form</a>
+            <a href="F_POST.PHP" class="btn btn-primary">Kembali ke Form</a>
         </div>
 
     </div>

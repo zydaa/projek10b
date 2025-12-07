@@ -79,6 +79,30 @@
 
 </head>
 <body>
+<script>
+    function formatNIM(event) {
+        let input = event.target;
+        let value = input.value.replace(/\./g, ""); 
+
+        let result = "";
+
+        if (value.length > 0) {
+            result += value.substring(0, 3);
+            if (value.length >= 3) result += ".";
+        }
+
+        if (value.length > 3) {
+            result += value.substring(3, 7);
+            if (value.length >= 7) result += ".";
+        }
+
+        if (value.length > 7) {
+            result += value.substring(7);
+        }
+
+        input.value = result;
+    }
+</script>
 
 <div class="container">
     <h2>Form Input Mahasiswa</h2>
@@ -86,10 +110,11 @@
     <form action="proses_post_sanitasi.php" method="POST">
 
         <label>NIM</label>
-        <input type="text" name="nim" required>
+       <input type="text" name="nim" maxlength="20" oninput="formatNIM(event)" placeholder="A12.2024.12345" required>
 
         <label>Nama</label>
-        <input type="text" name="nama" required>
+        <input type="text" name="nama" required pattern="[A-Za-z\s]+" title="Nama hanya boleh huruf dan spasi">
+
 
         <label>Umur</label>
         <input type="number" name="umur" required>
