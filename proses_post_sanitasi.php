@@ -4,13 +4,13 @@ function sanitize($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
-$nim        = bersihkan($_POST['nim']);
-$nama       = bersihkan($_POST['nama']);
-$alamat     = bersihkan($_POST['alamat']);
-$no_hp      = bersihkan($_POST['no_hp']);
-$jk         = isset($_POST['jk']) ? bersihkan($_POST['jk']) : "-";
-$email      = bersihkan($_POST['email']);
-$status     = isset($_POST['status']) ? bersihkan($_POST['status']) : "-";
+$nim        = sanitize($_POST['nim']);
+$nama       = sanitize($_POST['nama']);
+$alamat     = sanitize($_POST['alamat']);
+$no_hp      = sanitize($_POST['no_hp']);
+$jk         = isset($_POST['jk']) ? sanitize($_POST['jk']) : "-";
+$email      = sanitize($_POST['email']);
+$status     = isset($_POST['status']) ? sanitize($_POST['status']) : "-";
 
 
 if (!empty($_POST['hobi'])) {
