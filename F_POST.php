@@ -110,7 +110,7 @@
     <form action="proses_post_sanitasi.php" method="POST">
 
         <label>NIM</label>
-       <input type="text" name="nim" maxlength="20" oninput="formatNIM(event)" placeholder="A12.2024.12345" required>
+       <input type="text" name="nim" maxlength="20" oninput="formatNIM(event)" placeholder="A11.2025.12345" required>
 
         <label>Nama</label>
         <input type="text" name="nama" required pattern="[A-Za-z\s]+" title="Nama hanya boleh huruf dan spasi">
